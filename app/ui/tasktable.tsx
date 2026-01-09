@@ -8,7 +8,7 @@ export default async function TaskTable() {
             <table className="hidden min-w-full text-gray md:table">
                 <thead className="rounded-lg text-left text-sm font-normal">
                     <tr>
-                        <th className="px-4 py-5 font-medium sm:pl-6">Description</th>
+                        <th scope="col" className="px-4 py-5 font-medium sm:pl-6">Task</th>
                     </tr>
                 </thead>
                 <tbody className="bg-white">
