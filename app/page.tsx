@@ -7,8 +7,7 @@ export default async function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex flex-col min-h-screen w-full">
         <Header />
-        <div className="w-4/5 mx-auto">
-          <div className="my-8"><h2>Tasks</h2></div>
+        <div className="w-4/5 mx-auto mt-20">
           <TaskTable />
         </div>
       </main>
