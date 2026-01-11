@@ -11,8 +11,9 @@ export default async function TaskTable() {
             <table className="hidden min-w-full text-gray md:table">
                 <thead className="rounded-lg text-left text-sm font-normal">
                     <tr>
-                        <th scope="col" className="px-4 py-5 font-medium sm:pl-6">Task</th>
-                        <th scope="col" className="px-4 py-5 font-medium sm:pl-6">Status</th>
+                        <th scope="col" className="px-4 py-5 font-bold sm:pl-6">Task</th>
+                        <th scope="col" className="px-4 py-5 font-bold sm:pl-6">Assigned to</th>
+                        <th scope="col" className="px-4 py-5 font-bold sm:pl-6">Status</th>
                     </tr>
                 </thead>
                 <tbody className="bg-white">
