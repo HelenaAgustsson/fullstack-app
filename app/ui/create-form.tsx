@@ -3,6 +3,11 @@ import Link from 'next/link';
 import { Button } from './button';
 import { createTask } from '@/app/lib/actions';
 import { Person } from '../lib/definitions';
+import {
+    UserCircleIcon,
+    ClipboardIcon
+} from '@heroicons/react/24/outline';
+
 
 export default function Form({ persons }: { persons: Person[] }) {
     return (
@@ -16,7 +21,7 @@ export default function Form({ persons }: { persons: Person[] }) {
                         <select
                             id="personid"
                             name="personid"
-                            className="border-b-5 border-solid border-gray-50 peer block w-full cursor-pointer rounded-md py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                            className="bg-white border border-solid border-gray-200 peer block w-full cursor-pointer rounded-md py-2 pl-10 text-sm placeholder:text-gray-500"
                             defaultValue="0"
                         >
                             <option value="" disabled>
@@ -28,6 +33,7 @@ export default function Form({ persons }: { persons: Person[] }) {
                                 </option>
                             ))}
                         </select>
+                        <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
                     </div>
                 </div>
 
@@ -41,8 +47,9 @@ export default function Form({ persons }: { persons: Person[] }) {
                             name="description"
                             type="string"
                             placeholder="Enter task"
-                            className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                            className="bg-white border border-solid border-gray-200  peer block w-full rounded-md py-2 pl-10 text-sm placeholder:text-gray-500"
                         />
+                        <ClipboardIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
                     </div>
                 </div>
 
