@@ -12,3 +12,17 @@ export function CreateTask() {
         </Link>
     );
 }
+
+export function EditTask({ id }: { id: number }) {
+    return (
+        <div className='flex justify-end '>
+            <Link
+                href={`${id}/edit`}
+                className="rounded-md p-2 border-2 border-gray-200 hover:bg-gray-200"
+            >
+                <PencilIcon className="size-4 md:size-5" />
+            </Link>
+        </div>
+
+    );
+}
