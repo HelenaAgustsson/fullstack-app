@@ -1,15 +1,15 @@
 
 import Link from 'next/link';
 import { Button } from './button';
-import { createInvoice } from '@/app/lib/actions';
+import { createTask } from '@/app/lib/actions';
 import { Person } from '../lib/definitions';
 
 export default function Form({ persons }: { persons: Person[] }) {
     return (
-        <form action={createInvoice}>
+        <form action={createTask}>
             <div className="rounded-md bg-gray-50 p-4 md:p-6">
                 <div className="mb-4">
-                    <label htmlFor="customer" className="mb-2 block text-sm font-medium">
+                    <label htmlFor="person" className="mb-2 block text-sm font-medium">
                         Choose person
                     </label>
                     <div className="relative">

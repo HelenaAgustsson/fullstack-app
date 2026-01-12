@@ -16,6 +16,19 @@ export async function fetchTasks() {
     }
 }
 
+export async function fetchTaskById(id:number) {
+    try {
+        const data = await sql<Task[]>`
+        SELECT Tasks.id, Tasks.description, Tasks.done, Tasks.assigned_to
+        FROM Tasks WHERE Tasks.id = ${id}`;
+        return data[0];
+    }
+    catch(error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch tasks.');
+    }
+}
+
 export async function fetchPeople() {
     try {
         const data = await sql<Person[]>`
