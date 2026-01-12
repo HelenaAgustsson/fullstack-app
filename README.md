@@ -15,7 +15,7 @@ I am learning Next.js and used the documentation and Learn Next track as a guide
 
 I deployed this app using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
-You can view the live product at fullstack-app-two-sage.vercel.app/
+You can view the live product at [fullstack-app-two-sage.vercel.app/](https://fullstack-app-two-sage.vercel.app/)
 
 ## Local development
 
