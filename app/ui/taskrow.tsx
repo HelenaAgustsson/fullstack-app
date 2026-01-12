@@ -1,5 +1,6 @@
-import { Task, Person } from "../lib/definitions";
 import Image from "next/image";
+import { Task, Person } from "../lib/definitions";
+import { EditTask } from "./buttons";
 
 interface TaskRowProps {
     task: Task,
@@ -33,6 +34,7 @@ export default function TaskRow({ task, people }: TaskRowProps) {
                 </div>
             </td>
             <td className="whitespace-nowrap py-3 px-2 md:pl-6 md:pr-3">{task.done ? 'completed' : 'to do'}</td>
+            <td className="whitespace-nowrap py-3 px-2 md:pl-6 md:pr-3"><EditTask id={task.id} /></td>
         </tr>
     )
 }
