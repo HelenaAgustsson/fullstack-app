@@ -25,7 +25,7 @@ export default function TaskRow({ task, people }: TaskRowProps) {
             <td className="whitespace-nowrap py-3 px-2 md:pl-6 md:pr-3">
                 <div className="flex gap-2">
                     <Image
-                        src={`/persons/${assignedTo}.png`}
+                        src={`/${assignedTo}.png`}
                         className="rounded-full"
                         alt={`${assignedTo}'s profile picture`}
                         width={28}
