@@ -7,13 +7,13 @@ export default async function TaskTable() {
     const people = await fetchPeople()
 
     return (
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
-            <table className="hidden min-w-full text-gray md:table">
+        <div className="rounded-lg bg-gray-50 p-2">
+            <table className="min-w-full text-gray table-auto">
                 <thead className="rounded-lg text-left text-sm font-normal">
                     <tr>
-                        <th scope="col" className="px-4 py-5 font-bold sm:pl-6">Task</th>
-                        <th scope="col" className="px-4 py-5 font-bold sm:pl-6">Assigned to</th>
-                        <th scope="col" className="px-4 py-5 font-bold sm:pl-6">Status</th>
+                        <th scope="col" className="px-2 md:px-4 py-5 font-bold">Task</th>
+                        <th scope="col" className="px-2 md:px-4 py-5 font-bold">Assigned to</th>
+                        <th scope="col" className="px-2 md:px-4 py-5 font-bold">Status</th>
                     </tr>
                 </thead>
                 <tbody className="bg-white">

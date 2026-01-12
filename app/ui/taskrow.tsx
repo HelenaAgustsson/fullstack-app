@@ -1,4 +1,5 @@
 import { Task, Person } from "../lib/definitions";
+import Image from "next/image";
 
 interface TaskRowProps {
     task: Task,
@@ -12,15 +13,26 @@ const findPerson = (people: Person[], task: Task): string => {
     } else {
         return 'Not found'
     }
-
 }
 
 export default function TaskRow({ task, people }: TaskRowProps) {
+    const assignedTo = findPerson(people, task)
     return (
         <tr key={task.id} className="w-full border-b-5 border-solid border-gray-50 py-3 text-sm last-of-type:border-none">
-            <td className="whitespace-nowrap py-3 pl-6 pr-3">{task.description}</td>
-            <td className="whitespace-nowrap py-3 pl-6 pr-3">{findPerson(people, task)}</td>
-            <td className="whitespace-nowrap py-3 pl-6 pr-3">{task.done ? 'completed' : 'to do'}</td>
+            <td className="whitespace-nowrap py-3 px-2 md:pl-6 md:pr-3">{String(task.description).charAt(0).toUpperCase() + String(task.description).slice(1)}</td>
+            <td className="whitespace-nowrap py-3 px-2 md:pl-6 md:pr-3">
+                <div className="flex gap-2">
+                    <Image
+                        src={`/persons/${assignedTo}.png`}
+                        className="rounded-full"
+                        alt={`${assignedTo}'s profile picture`}
+                        width={28}
+                        height={28}
+                    />
+                    <div className="flex flex-col justify-center">{assignedTo}</div>
+                </div>
+            </td>
+            <td className="whitespace-nowrap py-3 px-2 md:pl-6 md:pr-3">{task.done ? 'completed' : 'to do'}</td>
         </tr>
     )
 }
