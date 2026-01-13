@@ -52,5 +52,12 @@ export async function updateTask(id:number, formData:FormData) {
  
   revalidatePath('/');
   redirect('/');
-   
+}
+
+export async function deleteTask(id:number) {
+  await sql`
+    DELETE FROM Tasks
+    WHERE id = ${id}
+  `
+  revalidatePath('/');
 }
