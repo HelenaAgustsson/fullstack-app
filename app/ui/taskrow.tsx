@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Task, Person } from "../lib/definitions";
-import { EditTask } from "./buttons";
+import { EditTask, DeleteTask } from "./buttons";
 import TaskStatus from "./status";
 
 interface TaskRowProps {
@@ -35,7 +35,11 @@ export default function TaskRow({ task, people }: TaskRowProps) {
                 </div>
             </td>
             <td className="whitespace-nowrap py-3 px-2 md:pl-6 md:pr-3"><TaskStatus status={task.done} /></td>
-            <td className="whitespace-nowrap py-3 px-2 md:pl-6 md:pr-3"><EditTask id={task.id} /></td>
+            <td className="whitespace-nowrap py-3 px-2 md:pl-6 md:pr-3 flex justify-end">
+                <div className="flex flex-col md:flex-row gap-2">
+                    <EditTask id={task.id} /><DeleteTask id={task.id} />
+                </div>
+            </td>
         </tr>
     )
 }

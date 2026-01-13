@@ -1,5 +1,6 @@
 import { PencilIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { deleteTask } from '../lib/actions';
 
 export function CreateTask() {
     return (
@@ -15,7 +16,7 @@ export function CreateTask() {
 
 export function EditTask({ id }: { id: number }) {
     return (
-        <div className='flex justify-end '>
+        <div className='flex justify-end'>
             <Link
                 href={`${id}/edit`}
                 className="rounded-md p-2 border-2 border-gray-200 hover:bg-gray-200"
@@ -24,5 +25,18 @@ export function EditTask({ id }: { id: number }) {
             </Link>
         </div>
 
+    );
+}
+
+export function DeleteTask({ id }: { id: number }) {
+    const deleteTaskWithId = deleteTask.bind(null, id);
+
+    return (
+        <form action={deleteTaskWithId}>
+            <button type="submit" className="rounded-md p-2 border-2 border-gray-200 hover:bg-gray-200 cursor-pointer">
+                <span className="sr-only">Delete</span>
+                <TrashIcon className="size-4 md:size-5" />
+            </button>
+        </form>
     );
 }
